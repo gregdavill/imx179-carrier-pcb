@@ -1,0 +1,274 @@
+EESchema Schematic File Version 4
+LIBS:SyzygyLVDSPod-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title "MIPI CSI-2 RX Pod"
+Date "2019-03-23"
+Rev "r0_1"
+Comp "GsD"
+Comment1 "SYZYGY Standard Pod"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny44A-MMH U1
+U 1 1 5C8E7EB4
+P 6150 3850
+F 0 "U1" H 5400 4800 50  0000 R CNN
+F 1 "ATtiny44A-MMH" H 5900 4700 50  0000 R CNN
+F 2 "Package_DFN_QFN:QFN-20-1EP_3x3mm_P0.45mm_EP1.6x1.6mm" H 6150 3850 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 6150 3850 50  0001 C CNN
+F 4 "Microchip Technology" H 0   0   50  0001 C CNN "Mfg"
+F 5 "ATTINY44A-MMH" H 0   0   50  0001 C CNN "PN"
+	1    6150 3850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L gkl_power:+3V3 #PWR0104
+U 1 1 5C8EA7D8
+P 6150 2700
+F 0 "#PWR0104" H 6150 2550 50  0001 C CNN
+F 1 "+3V3" H 6153 2851 50  0000 C CNN
+F 2 "" H 6150 2700 50  0001 C CNN
+F 3 "" H 6150 2700 50  0001 C CNN
+	1    6150 2700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 2700 6150 2950
+Wire Wire Line
+	6150 4750 6150 4850
+$Comp
+L gkl_power:GND #PWR0105
+U 1 1 5C8EAE67
+P 6150 4850
+F 0 "#PWR0105" H 6150 4600 50  0001 C CNN
+F 1 "GND" H 6153 4724 50  0000 C CNN
+F 2 "" H 6050 4500 50  0001 C CNN
+F 3 "" H 6150 4850 50  0001 C CNN
+	1    6150 4850
+	-1   0    0    -1  
+$EndComp
+Text HLabel 4850 3650 0    50   Input ~ 0
+SYZYGY_SCL
+Text HLabel 4850 3850 0    50   Input ~ 0
+SYZYGY_SDA
+Text HLabel 4850 3250 0    50   Input ~ 0
+SYZYGY_RGA
+$Comp
+L Device:R R1
+U 1 1 5C8EFE5A
+P 5200 2950
+F 0 "R1" H 5270 2996 50  0000 L CNN
+F 1 "10K" H 5270 2905 50  0000 L CNN
+F 2 "pkl_dipol:R_0402" V 5130 2950 50  0001 C CNN
+F 3 "~" H 5200 2950 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 0   0   50  0001 C CNN "Mfg"
+F 5 "RMCF0402FT10K0" H 0   0   50  0001 C CNN "PN"
+	1    5200 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L gkl_power:+3V3 #PWR0106
+U 1 1 5C8F2D1F
+P 5200 2700
+F 0 "#PWR0106" H 5200 2550 50  0001 C CNN
+F 1 "+3V3" H 5203 2851 50  0000 C CNN
+F 2 "" H 5200 2700 50  0001 C CNN
+F 3 "" H 5200 2700 50  0001 C CNN
+	1    5200 2700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2800 5200 2700
+Wire Wire Line
+	4850 3250 5200 3250
+Wire Wire Line
+	5200 3250 5200 3100
+Wire Wire Line
+	5200 3250 5550 3250
+Connection ~ 5200 3250
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J3
+U 1 1 5C9F7D39
+P 7950 4850
+F 0 "J3" H 8000 5167 50  0000 C CNN
+F 1 "TagConnect" H 8000 5076 50  0000 C CNN
+F 2 "pkl_tag_connect:TC2030-NL_SMALL" H 7950 4850 50  0001 C CNN
+F 3 "~" H 7950 4850 50  0001 C CNN
+	1    7950 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 4750 7750 4750
+Wire Wire Line
+	7400 4850 7750 4850
+Wire Wire Line
+	8250 4750 8400 4750
+Wire Wire Line
+	8250 4850 8600 4850
+Wire Wire Line
+	8250 4950 8400 4950
+Text Label 7400 4950 0    50   ~ 0
+~RESET
+Wire Wire Line
+	5200 4450 5550 4450
+Text Label 5200 4450 0    50   ~ 0
+~RESET
+Wire Wire Line
+	5200 3750 5550 3750
+Text Label 5200 3750 0    50   ~ 0
+MISO
+Text Label 5200 3850 0    50   ~ 0
+MOSI
+$Comp
+L gkl_power:+3V3 #PWR0127
+U 1 1 5C9FF55F
+P 7700 3350
+F 0 "#PWR0127" H 7700 3200 50  0001 C CNN
+F 1 "+3V3" H 7703 3501 50  0000 C CNN
+F 2 "" H 7700 3350 50  0001 C CNN
+F 3 "" H 7700 3350 50  0001 C CNN
+	1    7700 3350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L gkl_power:GND #PWR0128
+U 1 1 5C9FF902
+P 7700 3950
+F 0 "#PWR0128" H 7700 3700 50  0001 C CNN
+F 1 "GND" H 7703 3824 50  0000 C CNN
+F 2 "" H 7600 3600 50  0001 C CNN
+F 3 "" H 7700 3950 50  0001 C CNN
+	1    7700 3950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C14
+U 1 1 5C9FFDE8
+P 7700 3650
+F 0 "C14" H 7815 3696 50  0000 L CNN
+F 1 "100nF" H 7815 3605 50  0000 L CNN
+F 2 "pkl_dipol:C_0402" H 7738 3500 50  0001 C CNN
+F 3 "~" H 7700 3650 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 0   0   50  0001 C CNN "Mfg"
+F 5 "CL05B104KP5NNNC" H 0   0   50  0001 C CNN "PN"
+	1    7700 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 3350 7700 3500
+Wire Wire Line
+	7700 3800 7700 3950
+$Comp
+L gkl_power:+3V3 #PWR0129
+U 1 1 5CA01FA5
+P 8150 3350
+F 0 "#PWR0129" H 8150 3200 50  0001 C CNN
+F 1 "+3V3" H 8153 3501 50  0000 C CNN
+F 2 "" H 8150 3350 50  0001 C CNN
+F 3 "" H 8150 3350 50  0001 C CNN
+	1    8150 3350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L gkl_power:GND #PWR0130
+U 1 1 5CA01FAF
+P 8150 3950
+F 0 "#PWR0130" H 8150 3700 50  0001 C CNN
+F 1 "GND" H 8153 3824 50  0000 C CNN
+F 2 "" H 8050 3600 50  0001 C CNN
+F 3 "" H 8150 3950 50  0001 C CNN
+	1    8150 3950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:C C15
+U 1 1 5CA01FB9
+P 8150 3650
+F 0 "C15" H 8265 3696 50  0000 L CNN
+F 1 "1uF" H 8265 3605 50  0000 L CNN
+F 2 "pkl_dipol:C_0402" H 8188 3500 50  0001 C CNN
+F 3 "~" H 8150 3650 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 0   0   50  0001 C CNN "Mfg"
+F 5 "CL05A105KP5NNNC" H 0   0   50  0001 C CNN "PN"
+	1    8150 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 3350 8150 3500
+Wire Wire Line
+	8150 3800 8150 3950
+Text Label 7400 4850 0    50   ~ 0
+SCK
+Text Label 7400 4750 0    50   ~ 0
+MISO
+Text Label 8600 4850 2    50   ~ 0
+MOSI
+$Comp
+L gkl_power:GND #PWR0131
+U 1 1 5CA0B2DD
+P 8400 5050
+F 0 "#PWR0131" H 8400 4800 50  0001 C CNN
+F 1 "GND" H 8403 4924 50  0000 C CNN
+F 2 "" H 8300 4700 50  0001 C CNN
+F 3 "" H 8400 5050 50  0001 C CNN
+	1    8400 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L gkl_power:+3V3 #PWR0132
+U 1 1 5CA0BB62
+P 8400 4600
+F 0 "#PWR0132" H 8400 4450 50  0001 C CNN
+F 1 "+3V3" H 8403 4751 50  0000 C CNN
+F 2 "" H 8400 4600 50  0001 C CNN
+F 3 "" H 8400 4600 50  0001 C CNN
+	1    8400 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 4750 8400 4600
+Wire Wire Line
+	8400 5050 8400 4950
+Text Label 5200 3650 0    50   ~ 0
+SCK
+Wire Wire Line
+	4850 3650 5550 3650
+Wire Wire Line
+	4850 3850 5550 3850
+$Comp
+L Device:R R14
+U 1 1 5CA3FC45
+P 7200 4450
+F 0 "R14" H 7270 4496 50  0000 L CNN
+F 1 "10K" H 7270 4405 50  0000 L CNN
+F 2 "pkl_dipol:R_0402" V 7130 4450 50  0001 C CNN
+F 3 "~" H 7200 4450 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 0   0   50  0001 C CNN "Mfg"
+F 5 "RMCF0402FT10K0" H 0   0   50  0001 C CNN "PN"
+	1    7200 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L gkl_power:+3V3 #PWR0111
+U 1 1 5CA3FC4F
+P 7200 4200
+F 0 "#PWR0111" H 7200 4050 50  0001 C CNN
+F 1 "+3V3" H 7203 4351 50  0000 C CNN
+F 2 "" H 7200 4200 50  0001 C CNN
+F 3 "" H 7200 4200 50  0001 C CNN
+	1    7200 4200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 4300 7200 4200
+Wire Wire Line
+	7200 4950 7750 4950
+Wire Wire Line
+	7200 4600 7200 4950
+$EndSCHEMATC
